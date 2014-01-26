@@ -1,7 +1,6 @@
 class Beer < ActiveRecord::Base
 	belongs_to :brewery
 	has_many :ratings, dependent: :destroy
-	include RatingAverage
 
   	def average_rating
 		ratings = Rating.where beer_id:id
